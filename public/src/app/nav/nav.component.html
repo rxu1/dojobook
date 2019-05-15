@@ -1,0 +1,11 @@
+<nav>
+    <div class="nav-wrapper blue">
+      <a href="" class="brand-logo">Dojobook</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a [routerLink]="['/home']"> <i class="material-icons">home</i></a></li>
+        <li><a [routerLink]="['/messaging']"> <i class="material-icons">email</i></a></li>
+        <li><a [routerLink]="['']"> <i class="material-icons">person</i></a></li>
+        <li><a (click)="LogOut()">Log out</a></li>
+      </ul>
+    </div>
+  </nav>

@@ -1,0 +1,38 @@
+<app-nav></app-nav>
+<div class="container">
+  <!-- <a class="waves-effect waves-light btn" [routerLink]="['/messaging']">Messaging!</a> -->
+  <hr>
+  <h4>Welcome home {{username}}</h4>
+  <div class="col s12">
+    <div class="row">
+      <form (submit)="addPost(newPost)">
+        <div>
+          <!-- insert error messaging here!  -->
+          <!-- add ngFor statement -->
+        </div>
+        <div class="input-field">
+          <label for="post">Add post</label>
+          <p>{{newPost | json}}</p>
+          <textarea type="text" placeholder="What would you like to post {{username}}?" name="newPost.post" [(ngModel)]="newPost.post"></textarea>
+        </div>
+        <div class="input-field">
+          <label for="name">Name</label>
+          <textarea type="text" placeholder="Enter your name {{username}}" name="newPost.name" [(ngModel)]="newPost.name"></textarea>
+        </div>
+        <!-- <a class="waves-effect waves-light btn">Post!</a> -->
+        <button class="waves-effect waves-light btn">Post</button>
+      </form>
+    </div>
+    <div class="row">
+      <table class="highlight">
+        <tbody>
+          <tr *ngFor="let post of allPosts">
+            <td>{{post.name}}</td>
+            <td>{{post.posts.post}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

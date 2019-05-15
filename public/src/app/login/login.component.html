@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Log in</h1>
+  <hr>
+    <form (submit)="LogIn()">
+      <div>
+        <p *ngIf="dupError" style="color:red">{{ dupError }}</p>
+        <label for ="username">Username: </label>
+        <p *ngIf="errors" style="color:red">{{ errors.username.message }}</p>
+        <input type="text" name="user.username" [(ngModel)]="user.username">
+      </div>
+      <div>
+          <label for ="password">Password: </label>
+          <p *ngIf="errors" style="color:red">{{ errors.password.message }}</p>
+          <input type="password" name="user.password" [(ngModel)]='user.password'>
+        </div>
+          <button class="waves-effect waves-light btn blue" (click)="LogIn()">Log In</button>
+    </form>
+  </div>

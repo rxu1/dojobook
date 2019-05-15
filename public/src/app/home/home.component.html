@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="center-align">Sign up here!</h1>
+  <hr>
+  <form (submit)="onSubmit()">
+    <div>
+      <p *ngIf="dupError" style="color:red">{{ dupError }}</p>
+      <label for ="username">Username: </label>
+      <p *ngIf="errors" style="color:red">{{ errors.username.message }}</p>
+      <input type="text" name="user.username" [(ngModel)]="user.username">
+    </div>
+    <div>
+      <label for ="name">Name: </label>
+      <p *ngIf="errors" style="color:red">{{ errors.name.message }}</p>
+      <input type="text" name="user.name" [(ngModel)]='user.name'>
+    </div>
+    <div>
+      <label for ="password">Password: </label>
+      <p *ngIf="errors" style="color:red">{{ errors.password.message }}</p>
+      <input type="password" name="user.password" [(ngModel)]='user.password'>
+    </div>
+    <br>
+      <button class="waves-effect waves-light btn blue">Register</button>
+    </form>
+    <p>Already have an account? <a [routerLink]="['/login']">Log in here!</a></p>
+    <!-- <button class="waves-effect waves-light btn blue" [routerLink]="['/login']">Log In</button> -->
+</div>
